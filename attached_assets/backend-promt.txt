@@ -1,0 +1,165 @@
+You are building the BACKEND for a real college platform called
+“RGUKT RKV Alumni–Student Interaction Platform”.
+
+This is a PRODUCTION-STYLE backend.
+Follow clean architecture and best practices.
+
+--------------------------------------------------
+TECH STACK (STRICT)
+--------------------------------------------------
+- Node.js
+- Express.js
+- PostgreSQL (Supabase)
+- JWT authentication
+- bcrypt for password hashing
+- dotenv for environment variables
+- No ORM preference enforced (can use Prisma / Sequelize / pg)
+- REST APIs (not GraphQL)
+
+--------------------------------------------------
+CORE RULES
+--------------------------------------------------
+1. There is NO public registration.
+2. Only college emails are allowed (example: @rguktrkv.ac.in).
+3. Users are PRE-CREATED in the database by backend/admin scripts.
+4. Users NEVER select their role.
+5. Roles are: student, alumni, faculty.
+6. Admin exists ONLY in backend (no frontend UI).
+
+--------------------------------------------------
+AUTHENTICATION FLOW
+--------------------------------------------------
+Login API:
+- Input: email + password
+- If email not found → reject
+- If password is NULL (first login):
+  - Respond with FIRST_LOGIN_REQUIRED
+- If password exists:
+  - Verify password
+  - Generate JWT with user_id and role
+
+Create Password API (first-time login):
+- Input: email + new password
+- Hash password
+- Save password
+- Mark first_login = false
+- Generate JWT
+
+--------------------------------------------------
+DATABASE REQUIREMENTS
+--------------------------------------------------
+Assume PostgreSQL tables already exist in Supabase.
+
+Core tables:
+- users (id, email, password, role, is_first_login, is_active)
+- students
+- alumni
+- faculty
+- communities
+- community_members
+- forum_questions
+- forum_answers
+- alumni_insights
+- insight_comments
+- insight_reactions
+- connections
+- messages
+- events
+- notifications
+
+Backend must ONLY read/write data.
+Do NOT auto-create tables in code.
+
+--------------------------------------------------
+STUDENT FEATURES (APIs)
+--------------------------------------------------
+- Get student home data
+- Search people (students + alumni)
+- List communities
+- Join community
+- Post question in community
+- Reply to question
+- View alumni insights
+- Comment on insights
+- React to insights
+- Send connection request (student/alumni or student/student)
+- Accept / reject connection
+- Send and fetch messages (1-to-1 only)
+- View and register for events
+
+--------------------------------------------------
+ALUMNI FEATURES (APIs)
+--------------------------------------------------
+- Post alumni insights
+- Reply to forum questions
+- Accept / reject student connection requests
+- View students
+- View events
+- Volunteer / interested in events
+
+--------------------------------------------------
+FACULTY FEATURES (APIs)
+--------------------------------------------------
+- Create events
+- Edit / cancel events
+- Invite alumni to events
+- Manage communities (create / archive)
+
+--------------------------------------------------
+AUTHORIZATION
+--------------------------------------------------
+- JWT middleware required
+- Role-based access control middleware
+- Students cannot access alumni-only APIs
+- Alumni cannot access faculty-only APIs
+
+--------------------------------------------------
+PROJECT STRUCTURE (MANDATORY)
+--------------------------------------------------
+Use this folder structure:
+
+src/
+ ├── app.js
+ ├── server.js
+ ├── config/
+ │   └── db.js
+ ├── routes/
+ │   ├── auth.routes.js
+ │   ├── student.routes.js
+ │   ├── alumni.routes.js
+ │   └── faculty.routes.js
+ ├── controllers/
+ ├── services/
+ ├── middlewares/
+ │   ├── auth.middleware.js
+ │   └── role.middleware.js
+ ├── utils/
+ └── .env
+
+--------------------------------------------------
+SECURITY RULES
+--------------------------------------------------
+- Hash all passwords with bcrypt
+- Store secrets only in .env
+- Never expose database credentials
+- Validate request bodies
+- Handle errors centrally
+
+--------------------------------------------------
+DELIVERABLE
+--------------------------------------------------
+- Complete Express backend
+- All APIs implemented
+- Clean, readable code
+- Ready to connect with React frontend
+- Uses Supabase PostgreSQL as database
+
+--------------------------------------------------
+IMPORTANT
+--------------------------------------------------
+- Do NOT generate frontend code
+- Do NOT generate admin UI
+- Do NOT use mock data
+- This backend will be connected to a real frontend
+
+Proceed step by step and explain major decisions briefly.

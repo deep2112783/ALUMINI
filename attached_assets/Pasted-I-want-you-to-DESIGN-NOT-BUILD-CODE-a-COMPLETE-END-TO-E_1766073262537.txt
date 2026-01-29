@@ -1,0 +1,350 @@
+I want you to DESIGN (NOT BUILD CODE) a COMPLETE, END-TO-END frontend UI for a real college platform.
+
+Project Name:
+RGUKT RKV Alumni–Student Interaction Platform
+
+College Details:
+- College: Rajiv Gandhi University of Knowledge Technologies – RK Valley (RGUKT RKV)
+- Type: Government engineering university
+- Audience: Students, Alumni, Faculty
+- Purpose: Academic guidance, mentorship, collaboration, and events
+- Tone: Serious, professional, calm, student-friendly
+- This is NOT a social media app
+
+--------------------------------------------------
+DESIGN SCOPE (VERY IMPORTANT)
+--------------------------------------------------
+This task is ONLY for UI/UX DESIGN.
+❌ Do NOT generate backend code
+❌ Do NOT generate database logic
+❌ Do NOT generate admin UI
+✅ Only pages, layout, components, and interactions
+
+--------------------------------------------------
+COLOR PALETTE (STRICT – DO NOT CHANGE)
+--------------------------------------------------
+Primary (College color): Maroon → #800000
+Secondary: White → #FFFFFF
+Background: Light Gray → #F5F5F5
+
+Text Colors:
+- Primary text: #1F2937
+- Secondary text: #6B7280
+
+Usage Rules:
+- Sidebar background → Maroon
+- Active menu item → Maroon highlight
+- Buttons → Maroon background + white text
+- Cards → White
+- Page background → Light gray
+- NO gradients
+- NO flashy colors
+- NO neon or bright accents
+
+--------------------------------------------------
+GLOBAL LAYOUT (FOR ALL LOGGED-IN USERS)
+--------------------------------------------------
+The app uses a DASHBOARD layout.
+
+Layout structure:
+1. Fixed Left Sidebar
+2. Top Navigation Bar
+3. Main Content Area
+
+Sidebar:
+- Icons + text
+- Role-based menu items
+- Active page clearly highlighted
+- Clean, minimal, collapsible if possible
+
+Top Navbar:
+- Page title on left
+- Notification bell icon
+- Profile avatar with dropdown (Logout)
+
+--------------------------------------------------
+AUTHENTICATION PAGES (DESIGN ONLY)
+--------------------------------------------------
+There is NO registration page.
+
+Pages required:
+1. Login Page
+2. First-Time Create Password Page
+
+LOGIN PAGE DESIGN:
+- Centered card layout
+- Fields:
+  - College email
+  - Password
+- Text note:
+  “Only RGUKT RKV college emails are allowed”
+- Clean, distraction-free UI
+
+CREATE PASSWORD PAGE:
+- Shown ONLY for first-time users
+- Fields:
+  - New password
+  - Confirm password
+- Simple instructions
+- Single primary button
+
+--------------------------------------------------
+ROLES IN SYSTEM
+--------------------------------------------------
+UI should support ONLY these roles:
+1. Student
+2. Alumni
+3. Faculty
+
+(Admin exists only in backend – DO NOT DESIGN admin pages)
+
+--------------------------------------------------
+STUDENT SECTION (VERY DETAILED)
+--------------------------------------------------
+
+STUDENT SIDEBAR MENU:
+- Home
+- Communities
+- Alumni Insights
+- Connections
+- Messages
+- Events
+- Profile
+
+--------------------------------
+STUDENT HOME PAGE
+--------------------------------
+Purpose:
+Orientation + discovery (NOT analytics).
+
+The page MUST contain ONLY the following sections:
+
+1. Greeting Section
+   - Example: “Good Morning, Rishitha 👋”
+   - Friendly, simple text
+
+2. Global Search Bar
+   - Large, prominent
+   - Used to search PEOPLE ONLY
+     - Students
+     - Alumni
+   - Placeholder text:
+     “Search students, alumni, skills, or companies…”
+
+3. Notifications Section
+   - List style (not cards)
+   - Shows:
+     - Replies to community questions
+     - New alumni insights
+     - Event updates
+   - Each item clickable
+
+4. Upcoming Events
+   - Show only 2–3 events
+   - Event card shows:
+     - Title
+     - Date
+     - Organizer
+   - “View all events” link
+
+5. Suggested Alumni
+   - Alumni cards showing:
+     - Name
+     - Company
+     - Role
+     - Skills
+   - Button: Connect
+
+❌ NO stats
+❌ NO numbers
+❌ NO charts
+
+--------------------------------
+COMMUNITIES (STUDENT)
+--------------------------------
+Purpose:
+Forum-based doubt solving.
+
+COMMUNITIES LIST PAGE:
+- Community cards
+- Name, domain, description
+- Join / View button
+
+INSIDE A COMMUNITY:
+- Forum-style layout
+- NOT chat
+- Students can POST QUESTIONS
+- Alumni & senior students can REPLY
+- Replies shown under questions
+- Alumni replies clearly highlighted with “🎓 Alumni”
+- Clean threaded Q&A layout
+
+Joining a community enables notifications from that community.
+
+--------------------------------
+ALUMNI INSIGHTS (STUDENT VIEW)
+--------------------------------
+Purpose:
+One-to-many learning from alumni.
+
+Layout:
+- Feed-style page
+- Each insight card shows:
+  - Alumni name
+  - Graduation year
+  - Company / role
+  - Insight text
+  - Posted date
+
+Interactions:
+- Students can:
+  - React (like/appreciate)
+  - Comment
+- Alumni can reply to comments
+- Alumni replies highlighted
+
+--------------------------------
+CONNECTIONS (STUDENT)
+--------------------------------
+Tabs:
+- Alumni
+- Students
+- Requests
+
+Students can:
+- Connect with alumni (mentorship)
+- Connect with other students (collaboration)
+
+Cards show:
+- Name
+- Role badge
+- Skills
+- Connect / Pending / Connected state
+
+--------------------------------
+MESSAGES (STUDENT)
+--------------------------------
+- Two-column chat layout
+- Left: contacts list
+- Right: chat window
+- One-to-one only
+- Chat allowed ONLY after mutual connection
+
+--------------------------------
+EVENTS (STUDENT)
+--------------------------------
+- Event cards
+- Title, date, description
+- Register / Interested button
+
+--------------------------------
+PROFILE (STUDENT)
+--------------------------------
+- Name
+- Department
+- Skills (tags)
+- Bio
+- Editable
+- Email NOT editable
+
+--------------------------------------------------
+ALUMNI SECTION (VERY DETAILED)
+--------------------------------------------------
+
+ALUMNI SIDEBAR:
+- Home
+- Post Insights
+- Communities
+- Connections
+- Messages
+- Events
+- Profile
+
+ALUMNI HOME:
+- Greeting
+- Notifications
+- Quick action buttons:
+  - Post Insight
+  - View Community Questions
+- Upcoming events
+
+POST INSIGHTS:
+- Text editor
+- Optional domain tag
+- Publish button
+
+COMMUNITIES:
+- Same forum UI
+- Alumni reply to student questions
+
+CONNECTIONS:
+- Tabs:
+  - Requests
+  - Students
+  - Connected
+- Alumni accept/reject requests
+
+MESSAGES:
+- One-to-one only
+
+EVENTS:
+- View events
+- Volunteer / Interested buttons
+
+PROFILE:
+- Professional details
+- Company, role, expertise
+- Clean formal layout
+
+--------------------------------------------------
+FACULTY SECTION (VERY DETAILED)
+--------------------------------------------------
+
+FACULTY SIDEBAR:
+- Home
+- Events
+- Communities
+- Alumni Coordination
+- Profile
+
+FACULTY HOME:
+- Greeting
+- Event coordination updates
+- Quick actions:
+  - Create Event
+  - Coordinate with Alumni
+
+EVENTS:
+- Create / edit / cancel events
+- Select alumni participants
+
+ALUMNI COORDINATION:
+- Alumni list
+- Filter by domain
+- Invite alumni to events
+
+COMMUNITIES:
+- Create / edit / archive communities
+
+PROFILE:
+- Faculty details
+- Simple bio
+
+--------------------------------------------------
+DESIGN RULES (NON-NEGOTIABLE)
+--------------------------------------------------
+- Minimal
+- Clean spacing
+- Professional typography
+- No clutter
+- No social-media vibe
+- Focus on usability
+- College-appropriate UI
+
+--------------------------------------------------
+FINAL DELIVERABLE
+--------------------------------------------------
+- COMPLETE visual design of ALL pages
+- Consistent RGUKT RKV branding
+- Ready to convert into React + Tailwind
+- End-to-end UI coverage
